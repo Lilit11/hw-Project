@@ -1,4 +1,5 @@
 import axios from "axios";
+<<<<<<< HEAD
 import { IComment, IResponse, IUser, PartialUser } from "./types";
 
 export const Axios = axios.create({
@@ -107,3 +108,61 @@ export const addComment= async (comment: IComment, id:number): Promise<IResponse
   const response = await Axios.post("/posts/comment/" +id, comment);
   return response.data;
 };
+=======
+import { IResponse, IUser, PartialUser } from "./types";
+export const Axios = axios.create({
+    baseURL:"http://localhost:4002",
+    withCredentials:true
+})
+
+export const handleSignupRequest = async (user:IUser):Promise<IResponse> =>{
+    const response = await Axios.post('/signup', user)
+    return response.data
+}
+
+export const handleLogin = async (user:PartialUser):Promise<IResponse> =>{
+    const response = await Axios.post('/login', user)
+    return response.data
+}
+
+export const verifyUser = async ():Promise<IResponse> =>{
+    const response = await Axios.get('/verify')
+    return response.data
+}
+export const handleLogout= async ():Promise<IResponse> =>{
+    const response = await Axios.post('/logout')
+    return response.data
+}
+
+export const handleUpload = async (form:FormData):Promise<IResponse>=>{
+    const  response = await Axios.patch("/profile/upload", form)
+    return response.data
+}
+export const addPost = async (form:FormData):Promise<IResponse>=> {
+    const response = await Axios.post('/posts', form)
+    return response.data
+}
+
+export const getAllPosts = async ():Promise<IResponse>=> {
+    const response = await Axios.get('/posts')
+    return response.data
+}
+export const changePrivacy = async ():Promise<IResponse>=> {
+    const response = await Axios.patch('/account/set')
+    return response.data
+}
+export const deletePost = async (id:number) :Promise<IResponse>=>{
+    const response = await Axios.delete(`/posts/${id}`)
+    return response.data
+}
+
+export const changeLogin =async (obj: { password: string; login: string }) => {
+    const response = await Axios.patch(`/update/login`, obj)
+    return response.data
+}
+
+export const changePassword =async (obj: { old: string; newpwd: string }) => {
+    const response = await Axios.patch(`/update/password`, obj)
+    return response.data
+}
+>>>>>>> 5e7dac83b9a65d709ba21ee515199ed0e4fd3d11

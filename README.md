@@ -48,4 +48,7 @@ export default tseslint.config({
   },
 })
 ```
+<<<<<<< HEAD
 # social-app
+=======
+>>>>>>> 5e7dac83b9a65d709ba21ee515199ed0e4fd3d11

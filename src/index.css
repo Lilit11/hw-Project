@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body, .gradient-custom-2 {
   /* fallback for old browsers */
   background: #fbc2eb;
@@ -149,3 +150,32 @@ nav a.active {
   display: flex;
   flex-direction: column;
 }
+=======
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: san-serif
+  }
+ 
+nav{
+  display: flex;
+  gap:20px;
+  background:black;
+  padding:20px;
+}
+nav a, nav button{
+  background-color: transparent;
+  border:none;
+  outline:none;
+  color:white;
+  padding:5px 15px;
+  text-decoration: none;
+}
+nav a:hover,  nav button:hover{
+  color:coral
+}
+nav a.active{
+  background:coral;
+}
+>>>>>>> 5e7dac83b9a65d709ba21ee515199ed0e4fd3d11
